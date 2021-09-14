@@ -12,6 +12,7 @@ Son tipos de datos mutable y ordenado
 
 """
 
+a = []  # Array vacío
 a = [2, 3, 4]
 b = [2, True, 'Hola', 3.4]
 c = [2, [3, 4], ['Hola', 'Mundo'], [2.3, [2.4, 2.5], 2.6]]
@@ -55,6 +56,7 @@ Son un tipo de datos INMUTABLE y ordenado
 """
 
 a = (1, 2, 3, 4)
+a = ()  # Tupla vacía
 print(a[1])
 a = (2, 3, 4)
 b = (2, True, 'Hola', 3.4)
@@ -69,6 +71,7 @@ Un set no permite arrays en su interior
 """
 
 a = {1, 2, 3, 4, 5, 4 , 2, 1, 9, 7}
+a = set()  # set vacío
 
 """
 DICCIONARIO
@@ -78,6 +81,7 @@ Mutable pero no ordenado
 
 a = {'nombre': 'Daniel', 'apellido': 'Vega'}
 a = {1: 'Daniel', 2: 'Vega'}
+a = {}  # Diccionario vacío
 
 a['nombre']
 
@@ -96,6 +100,93 @@ for valor in a.items():
 for llave, valor in a.items():
     print(f'Llave: {llave}, Valor:{valor}')
     
+"""
+FUNCIONES
+
+"""
+
+def nombre_funciion():
+    pass
+
+def saludar():
+    print('Hola Mundo')
+
+
+def saludar(nombre):
+    print(f'Hola {nombre}')
+# Python no permite la sobrecarga de métodos
+
+# Parámetros Opcionales
+
+def saludar(nombre = 'Mundo'):
+    print(f'Hola {nombre}')
+
+
+def saludar(nombre, apellido = ""):
+    print(f'Hola {nombre} {apellido}')
+
+
+def saludar(nombre = "", apellido = ""):
+    print(f'Hola {nombre} {apellido}')
+
+# Python no deja tener un parámetro  obligatorio después de un parámetro opcional
+
+#def saludar(nombre, apellido="", segundo_apellido):
+#    print(f'Hola {nombre} {apellido} {segundo_apellido}')
+
+
+# Parámetros ilimitados
+# Imprime tuplas
+def saludar(*nombres):
+    print(f'Hola {nombres}')
+
+def saludar(*nombres):
+    for nombre in nombres:
+        print(f'Hola {nombre}')
+
+
+def saludar(*nombres, apellido=""):
+    for nombre in nombres:
+        print(f'Hola {nombre}')
+    print(f'Apellido {apellido}')
+
+
+def saludar(*nombres, apellido):
+    for nombre in nombres:
+        print(f'Hola {nombre}')
+    print(f'Apellido {apellido}')
+
+
+# Espera un keyword o un diccionario como parámetro
+def saludar (**nombres):        #saludar(nombre1='Daniel', nombre2='Esteban')
+    print(nombres)              # Espera un llave : valor
+
+
+# Se puede jugar con los parámetros
+
+def resta(a, b):
+    print(a - b)
+
+# En consola:
+# resta(3, 4) | resultado -1
+# resta(4, 3) | resultado 1
+# resta(b=4, a=3) | resultado -1
+
+def operaciones(a, b):
+    suma = a + b
+    resta = a - b
+    mult = a * b
+    div = a / b
+    return suma, resta, mult, div
+
+resultados = operaciones(4, 5)
+
+suma, res, mul, div = operaciones(4, 5)
+
+suma, _, _, div = operaciones(4, 5)
+
+
+
 
 
 
