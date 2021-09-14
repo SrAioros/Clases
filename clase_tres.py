@@ -7,7 +7,7 @@ Created on Mon Sep 13 19:26:12 2021
 
 # Tipos de Colecciones
 """
-Listas o Vectores
+LISTAS O VECTORES
 Son tipos de datos mutable y ordenado
 
 """
@@ -48,14 +48,54 @@ b = a[:6]   # Copia los elementos de la pocisión 0 hasta la pocisión 5
 b = a[2:]   # Copia los elementos desde la posición 2 hasta el final del vector
 
 
+"""
+TUPLAS
+Son un tipo de datos INMUTABLE y ordenado
 
+"""
 
+a = (1, 2, 3, 4)
+print(a[1])
+a = (2, 3, 4)
+b = (2, True, 'Hola', 3.4)
+c = (2, [3, 4], ['Hola', 'Mundo'], [2.3, [2.4, 2.5], 2.6])
+4 in a
 
+"""
+SET
+Mutable pero no ordenado
+Un set no permite arrays en su interior
 
+"""
 
+a = {1, 2, 3, 4, 5, 4 , 2, 1, 9, 7}
 
+"""
+DICCIONARIO
+Mutable pero no ordenado
 
+"""
 
+a = {'nombre': 'Daniel', 'apellido': 'Vega'}
+a = {1: 'Daniel', 2: 'Vega'}
+
+a['nombre']
+
+for valor in a:
+    print(valor)
+
+for valor in a.values():
+    print(valor)
+    
+for valor in a.keys():
+    print(valor)
+
+for valor in a.items():
+    print(valor)
+
+for llave, valor in a.items():
+    print(f'Llave: {llave}, Valor:{valor}')
+    
 
 
 
